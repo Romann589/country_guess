@@ -10,7 +10,7 @@ import random
 
 
 def init_app():
-    json_loaded = load_country_file('countries.json')
+    json_loaded = load_country_file('src/countries.json')
 
     return load_countries(json_loaded)
 
