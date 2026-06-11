@@ -11,8 +11,12 @@ def load_countries(country_dict):
     countries = []
     for country in country_dict:
         cca3= country['cca3']
-        country_name= country['translations']['deu']['official']
-        languages = country['languages']
+        country_name= country['translations']['deu']['common']
+        languages_data = country['languages']
+        if isinstance(languages_data, dict):
+            languages = list(languages_data.values())
+        else:
+            languages = list(languages_data)
         capital = country['capital']
         border = country['borders']
         population = country['population']
