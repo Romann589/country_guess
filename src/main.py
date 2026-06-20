@@ -56,7 +56,18 @@ def main(page: ft.Page):
 
     def start_game(e):
         print("Game started")
-        
+    
+    music_is_playing = True
+
+    def music(e):
+        nonlocal music_is_playing
+
+        if music_is_playing:
+            background_music.pause()
+            music_is_playing = False
+        else:
+            background_music.play()
+            music_is_playing = True
     
     def close_game(e):
         page.window.destroy()
@@ -113,6 +124,7 @@ def main(page: ft.Page):
         Button(text="next country", on_click=next_country),
         Button(text="check guess", on_click=check_guess),
         Button(text="Close App", on_click=close_game),
+        Button(text="Music On / Off", on_click=music),
         ],alignment=MainAxisAlignment.CENTER),],
         vertical_alignment=MainAxisAlignment.CENTER,
         horizontal_alignment=CrossAxisAlignment.CENTER,
