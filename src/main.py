@@ -131,7 +131,6 @@ def main(page: ft.Page):
         spacing=26
         
         
-        
         ))
 
     page.update()
